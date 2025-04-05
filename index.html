@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random UK Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #004c97;
+            color: white;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #d32f2f;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Random UK Facts Website!</h1>
+    </header>
+
+    <div class="content">
+        <p id="fact">Click below to discover a random UK fact!</p>
+        <button onclick="generateFact()">Generate Random Fact</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Random UK Facts</p>
+    </footer>
+
+    <script>
+        const facts = [
+            "The UK is home to the world's first ever postage stamp, the Penny Black.",
+            "Big Ben is actually the name of the bell, not the clock or the tower.",
+            "The UK has the oldest underground railway system in the world.",
+            "The world's first chocolate bar was invented in the UK.",
+            "The London Eye is the world’s largest observation wheel.",
+            "The UK is made up of four countries: England, Scotland, Wales, and Northern Ireland.",
+            "The Beatles, one of the most famous bands in the world, originated in the UK.",
+            "Stonehenge, one of the world's most famous landmarks, is over 4,000 years old."
+        ];
+
+        function generateFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const factElement = document.getElementById('fact');
+            factElement.textContent = facts[randomIndex];
+        }
+    </script>
+</body>
+</html>
